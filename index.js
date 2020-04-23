@@ -1,5 +1,5 @@
+import * as yup from 'yup';
 import Edit from './edit';
-import yup from 'yup';
 
 const str = yup.string().trim().min(1).max(500).required();
 

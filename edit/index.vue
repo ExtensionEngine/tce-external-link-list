@@ -10,14 +10,14 @@
     </div>
     <content-form
       v-else-if="isFocused"
+      @save="$emit('save', $event)"
       :items="items"
-      :title="title"
-      @save="$emit('save', $event)"/>
+      :title="title" />
     <div v-else>
       <div class="preview">
         <div class="title">{{ title }}</div>
-        <div v-for="{ id, title, url } in items" :key="id">
-          <div class="link-title">{{ title }}</div>
+        <div v-for="{ id, title: linkTitle, url } in items" :key="id">
+          <div class="link-title">{{ linkTitle }}</div>
           <a :href="url" target="_blank">{{ url }}</a>
         </div>
       </div>

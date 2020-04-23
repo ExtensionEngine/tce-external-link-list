@@ -2,8 +2,8 @@
   <div>
     <div :class="{ 'has-error': vErrors.has('title') }">
       <input
-        v-validate="{ required: true, min: 1, max: 500 }"
         v-model.trim="sectionTitle"
+        v-validate="{ required: true, min: 1, max: 500 }"
         class="form-control"
         name="title"
         type="text"
@@ -22,8 +22,8 @@
         :class="{ 'has-error': vErrors.has(getName(propName, index)) }"
         class="col-xs-5">
         <input
-          v-validate="{ required: true, url: propName === 'url', min: 1, max: 500 }"
           v-model.trim="item[propName]"
+          v-validate="{ required: true, url: propName === 'url', min: 1, max: 500 }"
           :data-vv-as="propName"
           :name="getName(propName, index)"
           :placeholder="capitalize(propName)"
@@ -43,8 +43,8 @@
     <div class="actions">
       <button @click="add" class="btn">Add new link</button>
       <button
-        :disabled="hasNoItems || !sectionTitle"
         @click="save"
+        :disabled="hasNoItems || !sectionTitle"
         class="btn btn-success">
         Save
       </button>
